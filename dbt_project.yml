@@ -41,6 +41,7 @@ models:
     example:
       +materialized: table
 
-seeds:
-	+database: "ALUMNO31_DEV_BRONZE_DB"
-	+schema: "SEEDS"
+
+# seeds:
+# 	+database: "ALUMNO31_DEV_BRONZE_DB"
+# 	+schema: "SEEDS"
