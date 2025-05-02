@@ -2,8 +2,8 @@ version: 2
 
 sources:
 
-  - name: bronze_sql_server_dbo # name of the source 
-    schema: bronze_sql_server_dbo # this is the schema our raw data lives in
+  - name: sql_server_dbo # name of the source 
+    schema: sql_server_dbo # this is the schema our raw data lives in
     database: ALUMNO31_DEV_BRONZE_DB # this is the name of our database
 
     quoting:
@@ -84,39 +84,27 @@ sources:
           - name: _FIVETRAN_SYNCED
 
     
-
       - name: promos
         loaded_at_field: _FIVETRAN_SYNCED
         columns:
-          - name: _row
-          - name: product_id
-          - name: quantity
-          - name: month
-          - name: _fivetran_synced 
+          - name: PROMO_ID
+          - name: DISCOUNT
+          - name: STATUS
+          - name: _FIVETRAN_DELETED
+          - name: _FIVETRAN_SYNCED 
 
-# PROMO_ID
-# DISCOUNT
-# STATUS
-# _FIVETRAN_DELETED
-# _FIVETRAN_SYNCED
 
       - name: users
         loaded_at_field: _FIVETRAN_SYNCED
         columns:
-          - name: _row
-          - name: product_id
-          - name: quantity
-          - name: month
-          - name: _fivetran_synced
-
-# USER_ID
-# UPDATED_AT
-# ADDRESS_ID
-# LAST_NAME
-# CREATED_AT
-# PHONE_NUMBER
-# TOTAL_ORDERS
-# FIRST_NAME
-# EMAIL
-# _FIVETRAN_DELETED
-# _FIVETRAN_SYNCED
+          - name: USER_ID
+          - name: UPDATED_AT
+          - name: ADDRESS_ID
+          - name: LAST_NAME
+          - name: CREATED_AT
+          - name: PHONE_NUMBER
+          - name: TOTAL_ORDERS
+          - name: FIRST_NAME
+          - name: EMAIL
+          - name: _FIVETRAN_DELETED
+          - name: _FIVETRAN_SYNCED
