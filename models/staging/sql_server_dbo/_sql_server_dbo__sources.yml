@@ -69,7 +69,7 @@ sources:
           - name: product_id
           - name: quantity
           - name: _FIVETRAN_DELETED
-          - name: _fivetran_synced
+          - name: _FIVETRAN_SYNCED
 
           
 
