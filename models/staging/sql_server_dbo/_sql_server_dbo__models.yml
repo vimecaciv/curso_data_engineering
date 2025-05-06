@@ -7,6 +7,9 @@ models:
       - name: address_id
         data_type: varchar
         description: ""
+        tests:
+          - not_null
+          - unique  
 
       - name: zipcode
         data_type: number
@@ -38,6 +41,9 @@ models:
       - name: event_id
         data_type: varchar
         description: ""
+        tests:
+          - not_null
+          - unique 
 
       - name: page_url
         data_type: varchar
@@ -50,6 +56,7 @@ models:
       - name: user_id
         data_type: varchar
         description: ""
+        
 
       - name: product_id
         data_type: varchar
@@ -81,6 +88,9 @@ models:
       - name: order_id
         data_type: varchar
         description: ""
+        tests:
+          - not_null
+          - unique          
 
       - name: product_id
         data_type: varchar
@@ -104,6 +114,9 @@ models:
       - name: order_id
         data_type: varchar
         description: ""
+        tests:
+          - not_null
+          - unique          
 
       - name: shipping_service
         data_type: varchar
@@ -167,6 +180,9 @@ models:
       - name: product_id
         data_type: varchar
         description: ""
+        tests:
+          - not_null
+          - unique          
 
       - name: price
         data_type: float
@@ -194,6 +210,9 @@ models:
       - name: promo_id
         data_type: varchar
         description: ""
+        tests:
+          - not_null
+          - unique        
 
       - name: discount
         data_type: number
@@ -217,6 +236,9 @@ models:
       - name: user_id
         data_type: varchar
         description: ""
+        tests:
+          - not_null
+          - unique          
 
       - name: updated_at
         data_type: timestamp_tz

@@ -25,4 +25,5 @@ renamed_casted AS (
     FROM src_users
     )
 
-SELECT * FROM renamed_casted
+SELECT *
+ FROM renamed_casted

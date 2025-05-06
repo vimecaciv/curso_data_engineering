@@ -19,4 +19,5 @@ renamed_casted AS (
     FROM src_budget
     )
 
-SELECT * FROM renamed_casted
+SELECT *
+FROM renamed_casted

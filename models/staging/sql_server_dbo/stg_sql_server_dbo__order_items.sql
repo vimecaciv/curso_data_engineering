@@ -19,4 +19,5 @@ renamed_casted AS (
     FROM src_order_items
     )
 
-SELECT * FROM renamed_casted
+SELECT *
+FROM renamed_casted

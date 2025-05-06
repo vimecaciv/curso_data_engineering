@@ -1,22 +1,23 @@
-{{
-  config(
-    materialized='view'
-  )
-}}
+with 
 
-WITH src_promos AS (
-    SELECT * 
-    FROM {{ source('sql_server_dbo', 'promos') }}
-    ),
+source as (
 
-renamed_casted AS (
-    SELECT
-        PROMO_ID,
-        DISCOUNT,
-        STATUS,
-        _FIVETRAN_DELETED AS is_deleted,
-        _FIVETRAN_SYNCED AS date_load
-    FROM src_promos
-    )
+    select * from {{ source('sql_server_dbo', 'promos') }}
 
-SELECT * FROM renamed_casted
+),
+
+renamed as (
+
+    select
+        promo_id,
+        discount,
+        status,
+        _fivetran_deleted,
+        _fivetran_synced
+
+    from source
+
+)
+
+select *
+from renamed

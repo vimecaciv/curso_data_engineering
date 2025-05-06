@@ -24,4 +24,5 @@ renamed_casted AS (
     FROM src_events
     )
 
-SELECT * FROM renamed_casted
+SELECT * 
+FROM renamed_casted

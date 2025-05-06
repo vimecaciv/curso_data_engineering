@@ -21,4 +21,5 @@ renamed_casted AS (
     FROM src_addresses
     )
 
-SELECT * FROM renamed_casted
+SELECT * 
+FROM renamed_casted
