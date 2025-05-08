@@ -1,25 +1,24 @@
-{{
-  config(
-    materialized='view'
-  )
-}}
+with 
 
-WITH src_addresses AS (
-    SELECT * 
-    FROM {{ source('sql_server_dbo', 'addresses') }}
-    ),
+source as (
 
-renamed_casted AS (
-    SELECT
-        ADDRESS_ID,
-        ZIPCODE,
-        COUNTRY,
-        ADDRESS,
-        STATE,
-        _FIVETRAN_DELETED AS is_deleted,
-        _FIVETRAN_SYNCED AS date_load
-    FROM src_addresses
-    )
+    select * from {{ source('sql_server_dbo', 'addresses') }}
 
-SELECT * 
-FROM renamed_casted
+),
+
+renamed as (
+
+    select
+        address_id,
+        zipcode,
+        country,
+        address,
+        state,
+        _fivetran_deleted,
+        _fivetran_synced
+
+    from source
+
+)
+
+select * from renamed

@@ -11,12 +11,13 @@ WITH src_budget AS (
 
 renamed_casted AS (
     SELECT
-          _row::varchar(256) 
-        , product_id::varchar(256) 
-        , quantity::varchar(256) 
-        , month::varchar(256) 
+          _row 
+        , product_id 
+        , quantity
+        , month
         , _fivetran_synced AS date_load
     FROM src_budget
+    where _fivetran_synced >= '{{ var('budget_date')}}'
     )
 
 SELECT *

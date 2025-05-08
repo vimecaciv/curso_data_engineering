@@ -26,7 +26,7 @@ empty_values as (
 unido as (
 
 SELECT         
-    {{dbt_utils.generate_surrogate_key(['promo_id'])}} AS promo_id,
+    promo_id,
     discount,
     status,
     _fivetran_deleted,
@@ -50,7 +50,7 @@ FROM empty_values
 renamed as (
 
     select
-        promo_id,
+        {{dbt_utils.generate_surrogate_key(['promo_id'])}} AS promo_id,
         discount,
         status,
         _fivetran_deleted,
